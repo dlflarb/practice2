@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+body {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+a {	
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.userInfo {
+	text-align: right;
+}
+
+
+header {
+    height: 70px;
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    width : 30%;    
+}
+
+.menu ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;    
+}
+
+
+.board table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.board th, .board td {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.493);
+    padding : 10px 15px;
+}
+
+.board tr:nth-child(n+2):hover {
+    background-color: rgba(128, 128, 128, 0.068);
+
+}
+
+.board tr:first-child {
+    background-color: rgba(128, 128, 128, 0.493);
+}
+
+.board .title {
+    text-align:  left;
+    width: 50%;
+}
+
+.boardView, .boardWrite{
+	width :90%;
+	margin: 20px auto;
+}
+
+.boardView table, .boardWrite table {
+	border-collapse: collapse;
+	width:  100%;
+}
+
+.boardView tr:nth-child(2) {
+	text-align: center;
+}
+
+
+
+.boardView th, .boardView td,
+.boardWrite th, .boardWrite td {
+	border : 1px solid black;
+	padding: 10px 15px;
+}
+
+
+
+.page ul {
+	display: flex;
+	justify-content: center;
+	padding: 0;
+	list-style: none;
+}
+
+.page li {
+	margin: 0 10px;
+}
+
+.inputForm fieldset {
+    width: 30%;
+    margin: 10px auto;
+}
+
+.inputForm form {
+    display: flex;
+    flex-direction: column;
+}
+
+.boardWrite input, .boardWrite textarea {
+	border: 0;
+	outline: none;
+	font-family: consolas;
+	font-size: 1.2em;
+}
+
+.inputForm input, .inputForm div,
+.boardWrite input{
+    margin: 10px auto;
+    width: 70%;
+    height: 30px;
+}
+
+.boardWrite textarea {
+	width:100%;
+	min-height: 600px;
+	resize: none;
+}
+
+.inputForm div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputForm button {
+    width: 48%;
+    height : 30px;
+}
+
+.inputForm h4 {
+	margin:auto;
+}
+
+footer {
+    text-align: center;
+}
+
+button.submit {
+	width: 50%;
+	height: 30px;
+	margin: auto;
+}

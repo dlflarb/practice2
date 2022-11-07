@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<!-- 1. DB접속에 사용되는 설정을 Spring bean으로 생성해 둔다 -->	
+	<bean id="hc" class="com.zaxxer.hikari.HikariConfig">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@192.168.1.100:1521:xe"/>
+		<property name="username" value="c##itbank"/>
+		<property name="password" value="it"/>
+	</bean>
+		
+	<!-- 2. 1번의 설정 객체을 활용해서 Connection Pool을 사용할 객체를 생성 -->
+	<bean id="hds" class="com.zaxxer.hikari.HikariDataSource">
+		<constructor-arg ref="hc"/>
+	</bean>
+	
+	<!-- 3. 2번의 커넥션 풀 객체를 전달해서 Mybatis 객체로 생성한다  -->
+	<bean id="ssfb" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="hds"/>
+		<property name="mapperLocations">
+			<list>
+				<value>classpath:mapper/account.xml</value>
+			</list>		
+		</property>
+		
+	</bean>
+	
+	<!-- 4. 세션 팩토리를 전달하여 sql 구문을 실행할 SqlSessionTemplate을 생성 -->
+	<bean id="sst" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="close">
+		<constructor-arg ref="ssfb"/>
+	</bean>
+	
+	<context:component-scan base-package="com.itbank.exception"/>
+	<context:component-scan base-package="com.itbank.service"/>
+	<context:component-scan base-package="com.itbank.component"/>
+	
+	<mybatis-spring:scan base-package="com.itbank.model.board"/>	
+	<mybatis-spring:scan base-package="com.itbank.model.account"/>
+	
+		
+</beans>
