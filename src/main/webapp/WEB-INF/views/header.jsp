@@ -19,7 +19,7 @@
 	
 	<header>	
 		<h1>
-			<a href="${cpath}/">ITBANK</a>
+			<a href="${cpath}/">정보공유</a>
 		</h1>
 		
 		<nav class="menu">

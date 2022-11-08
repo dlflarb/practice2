@@ -4,7 +4,7 @@
 	<br>
 	
     <footer>
-        <h3>(주)ITBANK 9월 평일 Spring</h3>
+        <h3>(주) Project 연습중</h3>
     </footer>
 
 </body>
