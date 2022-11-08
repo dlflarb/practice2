@@ -2,7 +2,7 @@ package com.itbank.model.api;
 
 import java.util.Date;
 
-public class coronaApiDTO {
+public class CoronaApiDTO {
 	private String ServiceKey, resultMsg, GUBUN, DEF_CNT;
 	private int pageNo, nymOfRows, resultCode, numOfRows, totalCount, SEQ, DEATH_CNT;
 	private Date startCreateDt, endCreateDt, CREATE_DT ;
