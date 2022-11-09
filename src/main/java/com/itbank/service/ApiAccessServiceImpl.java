@@ -13,10 +13,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import javax.swing.text.Document;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +24,7 @@ public class ApiAccessServiceImpl implements ApiAccessService{
 		
 		
 		
-		Date now = new Date();
+		  Date now = new Date();
 		  SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
 		  Calendar cal1 = Calendar.getInstance();
 		  Calendar cal7 = Calendar.getInstance();
@@ -142,7 +138,7 @@ public class ApiAccessServiceImpl implements ApiAccessService{
 		int opInt5 =Integer.parseInt(opStr5);
 		int opInt6 =Integer.parseInt(opStr6);
 		int opInt7 =Integer.parseInt(opStr7);
-		
+		int opIntAll = opInt1+opInt2+opInt3+opInt4+opInt5+opInt6+opInt7;
 		
 		//[6219, 12808, 19413, 26020, 32630, 39239, 45852]
 		//[6243, 12808, 19413, 26020, 32630, 39239, 45852]
@@ -156,10 +152,9 @@ public class ApiAccessServiceImpl implements ApiAccessService{
 	    System.out.println(opInt5);
 	    System.out.println(opInt6);
 	    System.out.println(opInt7);
-	    System.out.println(opInt1+opInt2+opInt3+opInt4+opInt5+opInt6+opInt7);
-	   
-	    System.out.println();
+	    System.out.println(opIntAll);	    
 	    
+	   	
 	  
 	    return ResponseEntity.ok().body(sb1);
 	}

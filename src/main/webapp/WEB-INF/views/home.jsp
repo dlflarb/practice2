@@ -53,7 +53,7 @@
 				<div class="body-text">
 					<p>지역별 최근 일주일 코로나 발생 수</p>
 					<p>서울</p>
-					<p>$</p>
+					<p>${opIntAll }</p>
 				</div>	 
 			</div>
 		</div>
