@@ -22,15 +22,16 @@ public class HomeController {
 	public ModelAndView home() {
 		ModelAndView mav = new ModelAndView("/home");
 		mav.addObject("list", bs.getBoardMain());
+		mav.addObject("map", cs.CoronaService());
 		return mav;		
 	}
 	
-	@GetMapping("/")
-	public ModelAndView CoronaInfo() throws Exception {
-		ModelAndView mav = new ModelAndView("/home");
-		mav.addObject("map", cs.CoronaService());
-		return mav;
-	}
+//	@GetMapping("/")
+//	public ModelAndView CoronaInfo() throws Exception {
+//		ModelAndView mav = new ModelAndView("/home");
+//		
+//		return mav;
+//	}
 	
 //	@PostMapping("/")	
 //	public ModelAndView home() throws Exception {
