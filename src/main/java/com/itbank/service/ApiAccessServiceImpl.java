@@ -152,11 +152,12 @@ public class ApiAccessServiceImpl implements ApiAccessService{
 	    System.out.println(opInt5);
 	    System.out.println(opInt6);
 	    System.out.println(opInt7);
-	    System.out.println(opIntAll);	    
+	    System.out.println(opIntAll);	
 	    
+	    String opIntAllStr = Integer.toString(opIntAll);
 	   	
-	  
-	    return ResponseEntity.ok().body(sb1);
+	    
+	    return ResponseEntity.ok().body(opIntAllStr);
 	}
 
 	

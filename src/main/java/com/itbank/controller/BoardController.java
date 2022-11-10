@@ -22,6 +22,7 @@ public class BoardController {
 	public ModelAndView getBoardList(@PathVariable int page) {
 		ModelAndView mav = new ModelAndView("/board/list");
 		mav.addObject("map", bs.getBoardList(page));
+		
 		return mav;
 	}
 	

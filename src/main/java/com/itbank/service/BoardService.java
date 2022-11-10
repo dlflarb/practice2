@@ -35,6 +35,8 @@ public class BoardService {
 		int begin = section * 10 + 1;
 		int end = (section + 1) * 10;
 		
+		int abc = 3;
+		
 		end = (end > totalPage) ? totalPage : end;
 		
 		boolean next = end != totalPage;

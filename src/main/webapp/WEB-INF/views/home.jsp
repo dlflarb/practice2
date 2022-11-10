@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+    pageEncoding="UTF-8"%>    
 <%@ include file="header.jsp" %>
 
         <article>
@@ -53,14 +52,30 @@
 				<div class="body-text">
 					<p>지역별 최근 일주일 코로나 발생 수</p>
 					<p>서울</p>
-					<p>${opIntAll }</p>
+					<p><a href="${map['opIntAllStr'] }"></a></p>					
 				</div>	 
 			</div>
 		</div>
       
         
-        
+<!--         <script>
+			$.ajax({
+				type:"post",
+				url:"/api/coronavalue",
+				dataType: "html",
+				success:function(result){
+					var data = $('prin')
+					$("#load").html(data);
+				}
+			})				
 		
+		</script>
+		<script>				
+	        window.onload = function() {					
+	                document.getElementById('execute').click();					
+	        }						
+		</script>
+		 -->
 
 
 
